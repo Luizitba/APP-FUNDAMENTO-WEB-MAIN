@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Cadastro & Login</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <main class="container">
+    <h1 class="title">Cadastro e Login</h1>
+
+    <section class="auth-grid">
+      <!-- CARD: CADASTRO (apenas para compor o layout lado a lado) -->
+      <div class="card">
+        <h2>Cadastro</h2>
+        <form id="form-cadastro" novalidate>
+          <div class="field">
+            <label for="cad-nome">Nome</label>
+            <input type="text" id="cad-nome" name="nome" placeholder="Seu nome" />
+          </div>
+
+          <div class="field">
+            <label for="cad-email">E-mail</label>
+            <input type="email" id="cad-email" name="email" placeholder="exemplo@dominio.com" />
+          </div>
+
+          <div class="field">
+            <label for="cad-senha">Senha</label>
+            <input type="password" id="cad-senha" name="senha" placeholder="Mínimo 6 caracteres" minlength="6" />
+          </div>
+
+          <button type="button" class="btn" disabled>Registrar</button>
+          <p class="muted">
+            *Cadastro aqui é ilustrativo para o layout. O foco do trabalho é o login.
+          </p>
+        </form>
+      </div>
+
+      <!-- CARD: LOGIN (com validações e console.log) -->
+      <div class="card">
+        <h2>Login</h2>
+        <form id="form-login" novalidate>
+          <div class="field">
+            <label for="login-email">E-mail <span class="req">*</span></label>
+            <input
+              type="email"
+              id="login-email"
+              name="email"
+              placeholder="exemplo@dominio.com"
+              required
+            />
+            <small class="error" id="err-email"></small>
+          </div>
+
+          <div class="field">
+            <label for="login-senha">Senha <span class="req">*</span></label>
+            <input
+              type="password"
+              id="login-senha"
+              name="senha"
+              placeholder="Mínimo 6 caracteres"
+              minlength="6"
+              required
+            />
+            <small class="error" id="err-senha"></small>
+          </div>
+
+          <button type="submit" class="btn">Logar</button>
+          <p class="muted">
+            *Ao clicar em “Logar”, os dados são exibidos no <strong>console</strong> do navegador.
+          </p>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
